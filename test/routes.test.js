@@ -19,4 +19,28 @@ describe('items routes', () => {
         });
       });
   });
+
+  it('can get an object with GET', () => {
+    return request(app)
+      .get('/api/quotes')
+      .then(res => {
+        expect(res.body).toEqual([{
+          name: 'ryan',
+          favoriteCharacter: 'Fry',
+          quote: ''
+        }]);
+      });
+  });
+
+  it('can get a specific object with GET', () => {
+    return request(app)
+      .get('/api/quotes')
+      .then(res => {
+        expect(res.body).toEqual([{
+          name: 'ryan',
+          favoriteCharacter: 'Fry',
+          quote: ''
+        }]);
+      });
+  });
 });
