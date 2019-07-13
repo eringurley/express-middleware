@@ -7,13 +7,15 @@ describe('items routes', () => {
       .post('/api/quotes')
       .send({
         name: 'ryan',
-        favoriteCharacter: 'Fry'
+        favoriteCharacter: 'Fry',
+        quote: ''
       })
       .then(res => {
         console.log(res.body);
-        expect(res.body).ToEqual({
+        expect(res.body).toEqual({
           name: 'ryan',
-          favoriteCharacter: 'Fry'
+          favoriteCharacter: 'Fry',
+          quote: ''
         });
       });
   });
