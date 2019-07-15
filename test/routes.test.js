@@ -43,4 +43,34 @@ describe('items routes', () => {
         }]);
       });
   });
+
+  it('can update an item with patch', () => {
+    const updatedQuote = {
+      name: 'erin',
+      favoriteCharacter: 'Bender',
+      quote: ''
+    };
+    return request(app)
+      .patch('/api/quotes/1')
+      .send(updatedQuote)
+      .then(res => {
+        expect(res.body).toEqual({
+          name: 'erin',
+          favoriteCharacter: 'Bender',
+          quote: ''
+        });
+      });
+  });
+
+  it('can delete an item by index', () => {
+    return request(app)
+      .delete('/api/quotes/1')
+      .then(res => {
+        expect(res.body).toEqual({
+          name: 'erin',
+          favoriteCharacter: 'Bender',
+          quote: ''
+        });
+      });
+  });
 });
