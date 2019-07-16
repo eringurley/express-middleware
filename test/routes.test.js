@@ -8,14 +8,12 @@ describe('items routes', () => {
       .send({
         name: 'ryan',
         favoriteCharacter: 'Fry',
-        quote: ''
       })
       .then(res => {
-        console.log(res.body);
         expect(res.body).toEqual({
           name: 'ryan',
           favoriteCharacter: 'Fry',
-          quote: ''
+          quote: expect.any(String)
         });
       });
   });
@@ -27,7 +25,7 @@ describe('items routes', () => {
         expect(res.body).toEqual([{
           name: 'ryan',
           favoriteCharacter: 'Fry',
-          quote: ''
+          quote: expect.any(String)
         }]);
       });
   });
@@ -39,7 +37,7 @@ describe('items routes', () => {
         expect(res.body).toEqual([{
           name: 'ryan',
           favoriteCharacter: 'Fry',
-          quote: ''
+          quote: expect.any(String)
         }]);
       });
   });
@@ -48,7 +46,7 @@ describe('items routes', () => {
     const updatedQuote = {
       name: 'erin',
       favoriteCharacter: 'Bender',
-      quote: ''
+      quote: expect.any(String)
     };
     return request(app)
       .patch('/api/quotes/1')
@@ -57,7 +55,7 @@ describe('items routes', () => {
         expect(res.body).toEqual({
           name: 'erin',
           favoriteCharacter: 'Bender',
-          quote: ''
+          quote: expect.any(String)
         });
       });
   });
@@ -69,7 +67,7 @@ describe('items routes', () => {
         expect(res.body).toEqual({
           name: 'erin',
           favoriteCharacter: 'Bender',
-          quote: ''
+          quote: expect.any(String)
         });
       });
   });
